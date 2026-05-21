@@ -8,32 +8,21 @@ export default function AboutPage() {
       {/* Principal's Message */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <SectionHeader title="Principal's Message" subtitle="A word from our dedicated leadership." />
+          <div className="mt-12 max-w-3xl mx-auto bg-secondary rounded-2xl p-8 shadow-sm">
             <div>
-              <SectionHeader title="Principal's Message" subtitle="A word from our esteemed leader." centered={false} />
-              <div className="mt-8">
-                <div className="space-y-4 text-gray-600 leading-relaxed">
-                  <p>
-                    Welcome to Froebel's School System. It is my privilege to lead this outstanding institution that has been shaping young minds for nearly five decades. Our commitment to academic excellence, moral development, and holistic education remains unwavering.
-                  </p>
-                  <p>
-                    At Froebel's, we believe that every child is unique and has unlimited potential. Our dedicated faculty works tirelessly to nurture each student's individual strengths while building a solid academic foundation.
-                  </p>
-                  <p>
-                    We look forward to partnering with families to create an enriching educational journey for every student. Together, we can build a brighter future.
-                  </p>
-                </div>
-                <div className="mt-4 font-bold text-primary italic">— Dr. Ayesha Malik, Principal</div>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>
+                  Welcome to Froebel's School System. It is my privilege to lead this outstanding institution that has been shaping young minds for nearly five decades. Our commitment to academic excellence, moral development, and holistic education remains unwavering.
+                </p>
+                <p>
+                  At Froebel's, we believe that every child is unique and has unlimited potential. Our dedicated faculty works tirelessly to nurture each student's individual strengths while building a solid academic foundation.
+                </p>
+                <p>
+                  We look forward to partnering with families to create an enriching educational journey for every student. Together, we can build a brighter future.
+                </p>
               </div>
-            </div>
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=80"
-                  alt="Principal"
-                  className="w-full h-80 object-cover"
-                />
-              </div>
+              <div className="mt-4 font-bold text-primary italic">— Dr. Ayesha Malik, Principal</div>
             </div>
           </div>
         </div>
