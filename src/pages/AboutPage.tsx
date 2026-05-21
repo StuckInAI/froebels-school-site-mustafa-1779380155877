@@ -8,18 +8,18 @@ export default function AboutPage() {
       {/* Mission & Vision */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader title="Our Mission & Vision" subtitle="Committed to nurturing every child's potential through excellence in education." />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <SectionHeader title="Our Mission & Vision" subtitle="Building excellence through education, character, and community." />
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
             <div className="bg-secondary rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-primary mb-4 font-serif">Our Mission</h3>
+              <h3 className="text-xl font-bold text-primary font-serif mb-3">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To provide quality education that develops the intellectual, moral, physical, and social potential of every student in a safe, inclusive, and stimulating environment.
+                To provide a holistic, high-quality education that develops the intellectual, moral, physical, and social potential of every student, preparing them to be responsible and productive citizens.
               </p>
             </div>
             <div className="bg-secondary rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-primary mb-4 font-serif">Our Vision</h3>
+              <h3 className="text-xl font-bold text-primary font-serif mb-3">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                To be Pakistan's leading educational institution, producing confident, creative, and compassionate graduates who are prepared to excel in a global society.
+                To be the leading educational institution in Pakistan, recognized for academic excellence, innovative teaching, and producing graduates who are leaders in their chosen fields.
               </p>
             </div>
           </div>
