@@ -10,8 +10,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <SectionHeader title="Principal's Message" subtitle="A word from our visionary leader." centered={false} />
-              <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
+              <SectionHeader title="Principal's Message" subtitle="A word from our distinguished leader." centered={false} />
+            </div>
+            <div className="mt-6">
+              <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
                   Welcome to Froebel's School System. It is my privilege to lead this outstanding institution that has been shaping young minds for nearly five decades. Our commitment to academic excellence, moral development, and holistic education remains unwavering.
                 </p>
@@ -23,13 +25,6 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="mt-4 font-bold text-primary italic">— Dr. Ayesha Malik, Principal</div>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=80"
-                alt="Principal"
-                className="w-full h-96 object-cover"
-              />
             </div>
           </div>
         </div>
