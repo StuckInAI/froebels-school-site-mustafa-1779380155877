@@ -5,29 +5,12 @@ import { facultyMembers } from '@/lib/data';
 export default function AboutPage() {
   return (
     <div>
-      {/* Mission & Vision */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader title="Our Mission & Vision" subtitle="Guiding principles that have shaped Froebel's for nearly five decades." />
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <div className="bg-secondary rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-primary mb-3">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed">To provide quality education that nurtures the intellectual, moral, and physical development of every student, preparing them to be responsible citizens and lifelong learners.</p>
-            </div>
-            <div className="bg-primary rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-white mb-3">Our Vision</h3>
-              <p className="text-blue-200 leading-relaxed">To be the leading educational institution in Pakistan, recognized for academic excellence, innovative teaching, and producing confident, capable graduates who make a positive impact on society.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Principal's Message */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <SectionHeader title="Principal's Message" />
-            <div className="mt-8 bg-white rounded-2xl p-8 shadow-sm">
+            <div className="mt-8">
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
                   Welcome to Froebel's School System. It is my privilege to lead this outstanding institution that has been shaping young minds for nearly five decades. Our commitment to academic excellence, moral development, and holistic education remains unwavering.
