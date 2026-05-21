@@ -8,9 +8,9 @@ export default function AboutPage() {
       {/* Principal's Message */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <SectionHeader title="Principal's Message" subtitle="A message from our school leadership." />
-            <div className="mt-8">
+          <SectionHeader title="Principal's Message" subtitle="A word from our esteemed leader." />
+          <div className="mt-12 max-w-3xl mx-auto">
+            <div className="bg-secondary rounded-2xl p-8 shadow-sm">
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
                   Welcome to Froebel's School System. It is my privilege to lead this outstanding institution that has been shaping young minds for nearly five decades. Our commitment to academic excellence, moral development, and holistic education remains unwavering.
