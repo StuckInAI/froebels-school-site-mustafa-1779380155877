@@ -1,75 +1,42 @@
-import { useState } from 'react';
-import { Calendar, Tag } from 'lucide-react';
-import SectionHeader from '@/components/ui/SectionHeader';
-import Badge from '@/components/ui/Badge';
 import { newsItems } from '@/lib/data';
-
-const categories = ['All', 'Academic', 'Events', 'Achievement', 'Facility'];
+import { Calendar, Tag } from 'lucide-react';
 
 export default function NewsPage() {
-  const [filter, setFilter] = useState('All');
-
-  const filtered = filter === 'All' ? newsItems : newsItems.filter((n) => n.category === filter);
-
   return (
     <div>
-      <div className="hero-gradient py-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white font-serif mb-4">News & Events</h1>
-        <p className="text-blue-200 text-lg">Latest happenings from Froebel's School System</p>
-      </div>
+      <section className="bg-gradient-to-br from-primary-dark to-primary py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white font-serif mb-4">News & Events</h1>
+          <p className="text-blue-200 text-lg max-w-2xl mx-auto">Stay updated with the latest happenings at Froebel's School System.</p>
+        </div>
+      </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader title="Latest News" subtitle="Stay updated with school news, achievements, and upcoming events." />
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-3 justify-center mt-8 mb-12">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                  filter === cat
-                    ? 'bg-primary text-white shadow-md'
-                    : 'bg-secondary text-gray-600 hover:bg-primary/10 hover:text-primary'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((item) => (
-              <article key={item.id} className="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-                <div className="bg-gradient-to-br from-primary to-primary-light h-44 flex items-center justify-center">
-                  <span className="text-7xl opacity-25">📰</span>
+            {[...newsItems, ...newsItems].map((item, i) => (
+              <div key={`${item.id}-${i}`} className="card-hover bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="h-48 bg-secondary flex items-center justify-center">
+                  <span className="text-primary/20 font-serif text-7xl font-bold">F</span>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <Badge label={item.category} variant="accent" />
-                    <span className="text-xs text-gray-400 flex items-center gap-1">
-                      <Calendar size={12} />
-                      {new Date(item.date).toLocaleDateString('en-PK', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="flex items-center gap-1 text-xs text-accent font-semibold bg-accent/10 px-2 py-1 rounded-full">
+                      <Tag size={11} />{item.category}
+                    </span>
+                    <span className="flex items-center gap-1 text-xs text-gray-400">
+                      <Calendar size={11} />{item.date}
                     </span>
                   </div>
-                  <h2 className="font-bold text-gray-800 text-base leading-snug mb-3">{item.title}</h2>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.excerpt}</p>
-                  <button className="mt-4 text-primary font-semibold text-sm hover:text-accent transition-colors flex items-center gap-1">
-                    <Tag size={13} />
-                    Read More
+                  <h3 className="font-bold text-primary text-lg leading-snug mb-2">{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{item.excerpt}</p>
+                  <button className="text-primary font-semibold text-sm hover:text-accent transition-colors">
+                    Read More →
                   </button>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
-
-          {filtered.length === 0 && (
-            <div className="text-center py-20 text-gray-400">
-              <div className="text-5xl mb-4">📭</div>
-              <p className="text-lg">No news items found in this category.</p>
-            </div>
-          )}
         </div>
       </section>
     </div>

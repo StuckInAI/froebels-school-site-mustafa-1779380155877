@@ -13,49 +13,34 @@ export type NewsItem = {
   image?: string;
 };
 
-export type GalleryItem = {
-  id: number;
-  title: string;
-  category: string;
-  image: string;
-};
-
-export type Achievement = {
-  id: number;
-  title: string;
-  description: string;
-  icon: string;
-  year: string;
-};
-
-export type Faculty = {
+export type Program = {
   id: number;
   name: string;
-  designation: string;
-  department: string;
-  image?: string;
-  qualification: string;
+  description: string;
+  icon: string;
+  grades: string;
+  color: string;
 };
 
 export type Testimonial = {
   id: number;
   name: string;
   role: string;
-  text: string;
+  quote: string;
   avatar?: string;
 };
 
-export type Program = {
+export type Achievement = {
   id: number;
-  name: string;
-  level: string;
+  title: string;
   description: string;
-  ageGroup: string;
+  year: string;
   icon: string;
 };
 
-export type StatItem = {
-  label: string;
-  value: string;
-  icon: string;
+export type GalleryItem = {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
 };

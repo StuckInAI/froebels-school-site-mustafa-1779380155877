@@ -1,30 +1,31 @@
 import { Link } from 'react-router-dom';
-import { Phone } from 'lucide-react';
 
 export default function CTASection() {
   return (
-    <section className="py-20 hero-gradient">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+    <section className="py-20 bg-gradient-to-br from-primary-dark via-primary to-primary-light">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="inline-block bg-accent/20 border border-accent/30 rounded-full px-4 py-1.5 mb-5">
+          <span className="text-accent-light text-sm font-medium">Admissions Open 2025-26</span>
+        </div>
         <h2 className="text-3xl md:text-5xl font-bold text-white font-serif mb-4">
-          Begin Your Child's Journey Today
+          Give Your Child the Best Start
         </h2>
-        <p className="text-blue-200 text-lg max-w-xl mx-auto mb-10">
-          Enrol your child in Froebel's School System and give them the best foundation for a bright future.
+        <p className="text-blue-200 text-lg mb-8 max-w-2xl mx-auto">
+          Join the Froebel's family and give your child access to world-class education, expert teachers, and a community that cares.
         </p>
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/admissions"
-            className="bg-accent hover:bg-accent-dark text-white font-bold px-10 py-4 rounded-lg text-lg transition-all hover:shadow-lg"
+            className="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-3 rounded-lg transition-all hover:shadow-lg hover:shadow-accent/30"
           >
             Apply for Admission
           </Link>
-          <a
-            href="tel:+92213456789"
-            className="flex items-center gap-2 border-2 border-white/50 text-white hover:bg-white/10 font-bold px-10 py-4 rounded-lg text-lg transition-all"
+          <Link
+            to="/contact"
+            className="border-2 border-white/40 text-white hover:bg-white/10 font-semibold px-8 py-3 rounded-lg transition-all"
           >
-            <Phone size={20} />
-            Call Us Now
-          </a>
+            Book a School Visit
+          </Link>
         </div>
       </div>
     </section>

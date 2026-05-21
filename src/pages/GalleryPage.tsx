@@ -1,37 +1,50 @@
 import { useState } from 'react';
-import { X } from 'lucide-react';
-import SectionHeader from '@/components/ui/SectionHeader';
-import { galleryItems } from '@/lib/data';
 
-const categories = ['All', 'Sports', 'Academic', 'Events', 'Arts'];
+const categories = ['All', 'Sports', 'Academics', 'Events', 'Arts', 'Infrastructure'];
+
+const galleryPlaceholders = [
+  { id: 1, title: 'Annual Sports Day 2024', category: 'Sports', emoji: '🏅', bg: 'bg-green-100' },
+  { id: 2, title: 'Science Exhibition', category: 'Academics', emoji: '🔬', bg: 'bg-blue-100' },
+  { id: 3, title: 'Graduation Ceremony', category: 'Events', emoji: '🎓', bg: 'bg-purple-100' },
+  { id: 4, title: 'Art & Craft Display', category: 'Arts', emoji: '🎨', bg: 'bg-pink-100' },
+  { id: 5, title: 'Computer Lab', category: 'Infrastructure', emoji: '💻', bg: 'bg-gray-100' },
+  { id: 6, title: 'Library', category: 'Infrastructure', emoji: '📚', bg: 'bg-yellow-100' },
+  { id: 7, title: 'Football Championship', category: 'Sports', emoji: '⚽', bg: 'bg-green-100' },
+  { id: 8, title: 'Annual Day Celebration', category: 'Events', emoji: '🎉', bg: 'bg-orange-100' },
+  { id: 9, title: 'Debate Competition', category: 'Academics', emoji: '🎤', bg: 'bg-blue-100' },
+  { id: 10, title: 'School Play', category: 'Arts', emoji: '🎭', bg: 'bg-pink-100' },
+  { id: 11, title: 'Cricket Match', category: 'Sports', emoji: '🏏', bg: 'bg-green-100' },
+  { id: 12, title: 'New Campus Opening', category: 'Events', emoji: '🏫', bg: 'bg-purple-100' },
+];
 
 export default function GalleryPage() {
-  const [filter, setFilter] = useState('All');
-  const [lightbox, setLightbox] = useState<string | null>(null);
+  const [active, setActive] = useState('All');
 
-  const filtered = filter === 'All' ? galleryItems : galleryItems.filter((g) => g.category === filter);
+  const filtered = active === 'All'
+    ? galleryPlaceholders
+    : galleryPlaceholders.filter((g) => g.category === active);
 
   return (
     <div>
-      <div className="hero-gradient py-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white font-serif mb-4">Gallery</h1>
-        <p className="text-blue-200 text-lg">Moments and memories from Froebel's School System</p>
-      </div>
+      <section className="bg-gradient-to-br from-primary-dark to-primary py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white font-serif mb-4">Photo Gallery</h1>
+          <p className="text-blue-200 text-lg max-w-2xl mx-auto">Glimpses of life at Froebel's — memories, milestones, and moments that matter.</p>
+        </div>
+      </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader title="Photo Gallery" subtitle="A glimpse into the vibrant life at Froebel's School System." />
-
           {/* Filter */}
-          <div className="flex flex-wrap gap-3 justify-center mt-8 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                  filter === cat
-                    ? 'bg-primary text-white shadow-md'
-                    : 'bg-secondary text-gray-600 hover:bg-primary/10 hover:text-primary'
+                onClick={() => setActive(cat)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+                  active === cat
+                    ? 'bg-primary text-white'
+                    : 'bg-white border border-gray-200 text-gray-600 hover:border-primary hover:text-primary'
                 }`}
               >
                 {cat}
@@ -39,52 +52,17 @@ export default function GalleryPage() {
             ))}
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((item) => (
-              <div
-                key={item.id}
-                className="card-hover rounded-2xl overflow-hidden shadow-md cursor-pointer group relative"
-                onClick={() => setLightbox(item.image)}
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <div>
-                    <p className="text-white font-bold">{item.title}</p>
-                    <p className="text-blue-200 text-sm">{item.category}</p>
-                  </div>
-                </div>
+              <div key={item.id} className={`card-hover ${item.bg} rounded-xl overflow-hidden aspect-square flex flex-col items-center justify-center gap-2 cursor-pointer`}>
+                <span className="text-5xl">{item.emoji}</span>
+                <span className="text-sm font-semibold text-gray-700 text-center px-3">{item.title}</span>
+                <span className="text-xs text-gray-500 bg-white/60 px-2 py-0.5 rounded-full">{item.category}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            className="absolute top-6 right-6 text-white bg-white/20 hover:bg-white/40 rounded-full p-2 transition-colors"
-            onClick={() => setLightbox(null)}
-            aria-label="Close lightbox"
-          >
-            <X size={24} />
-          </button>
-          <img
-            src={lightbox}
-            alt="Gallery image"
-            className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
     </div>
   );
 }
