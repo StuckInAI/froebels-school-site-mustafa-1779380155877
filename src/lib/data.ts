@@ -180,3 +180,56 @@ export const galleryItems: GalleryItem[] = [
   { id: 5, title: 'Computer Lab', category: 'Infrastructure', image: '' },
   { id: 6, title: 'Library', category: 'Infrastructure', image: '' },
 ];
+
+export type FacultyMember = {
+  id: number;
+  name: string;
+  designation: string;
+  department: string;
+  qualification: string;
+};
+
+export const facultyMembers: FacultyMember[] = [
+  {
+    id: 1,
+    name: 'Dr. Ayesha Malik',
+    designation: 'Principal',
+    department: 'Administration',
+    qualification: 'Ph.D. Education, University of Karachi',
+  },
+  {
+    id: 2,
+    name: 'Mr. Tariq Hussain',
+    designation: 'Vice Principal',
+    department: 'Administration',
+    qualification: 'M.Ed., Allama Iqbal Open University',
+  },
+  {
+    id: 3,
+    name: 'Ms. Zara Ahmed',
+    designation: 'Head of Academics',
+    department: 'Academics',
+    qualification: 'M.Sc. Mathematics, University of Karachi',
+  },
+  {
+    id: 4,
+    name: 'Mr. Usman Farooq',
+    designation: 'Head of Sciences',
+    department: 'Science Department',
+    qualification: 'M.Sc. Physics, NED University',
+  },
+  {
+    id: 5,
+    name: 'Ms. Hina Baig',
+    designation: 'Head of Languages',
+    department: 'Languages Department',
+    qualification: 'M.A. English Literature, University of Karachi',
+  },
+  {
+    id: 6,
+    name: 'Mr. Kamran Sheikh',
+    designation: 'Head of Co-Curriculars',
+    department: 'Student Affairs',
+    qualification: 'B.Ed., Sports & Physical Education',
+  },
+];
